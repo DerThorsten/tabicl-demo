@@ -1,0 +1,21 @@
+[workspace]
+name = "tabicl-demo"
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "linux-64"]
+
+[dependencies]
+python = "3.13.*"
+jupyter_server = "*"
+jupyterlite-core = ">=0.7"
+jupyterlite-xeus = ">=4.3"
+notebook = ">=7.5"
+
+[feature.test.dependencies]
+playwright-python = "*"
+
+[environments]
+test = ["test"]
+
+[tasks]
+build = "jupyter lite build --contents content --output-dir dist"
+serve = { cmd = "python -m http.server 8000 --directory dist", depends-on = ["build"] }

@@ -1,0 +1,10 @@
+name: xeus-kernel
+channels:
+  - https://prefix.dev/emscripten-forge/6x
+  - https://repo.prefix.dev/conda-forge
+dependencies:
+  - xeus-python
+  - tabicl
+  - pandas
+  - matplotlib-base
+  - scikit-learn
